@@ -37,10 +37,6 @@ export interface SiteData {
     text: string;
     account?: string;
   };
-  faq: Array<{
-    question: string;
-    answer: string;
-  }>;
   contact: {
     email?: string;
     phone?: string;
@@ -117,28 +113,6 @@ export const siteData: SiteData = {
     title: "Dary",
     text: "Vaše přítomnost je pro nás tím největším darem. Pokud byste nás přesto chtěli potěšit, oceníme příspěvek na svatební cestu.",
   },
-  faq: [
-    {
-      question: "Do kdy můžu potvrdit účast?",
-      answer: "Prosíme o potvrzení účasti do 1. srpna 2026 pomocí RSVP formuláře níže.",
-    },
-    {
-      question: "Mohu přijít s doprovodem?",
-      answer: "Ano, prosíme však o uvedení počtu osob v RSVP formuláři.",
-    },
-    {
-      question: "Je možné přinést děti?",
-      answer: "Ano, děti jsou vítány. Prosíme o uvedení jejich počtu v RSVP formuláři.",
-    },
-    {
-      question: "Co když mám dietní omezení?",
-      answer: "Prosíme o uvedení jakýchkoliv dietních omezení nebo alergií v poznámce RSVP formuláře.",
-    },
-    {
-      question: "Kde najdu více informací?",
-      answer: "V případě dotazů nás kontaktujte na telefonu uvedeném v patičce stránky.",
-    },
-  ],
   contact: {
     phoneGroom: "+420 739 148 787",
     phoneBride: "+420 732 382 093",

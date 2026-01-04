@@ -2,7 +2,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Section from './components/Section';
 import Timeline from './components/Timeline';
-import FAQ from './components/FAQ';
 import RSVPForm from './components/RSVPForm';
 import Footer from './components/Footer';
 import { siteData } from './data/siteData';
@@ -107,10 +106,6 @@ function App() {
             </p>
           )}
         </div>
-      </Section>
-
-      <Section id="faq" title="Často kladené otázky">
-        <FAQ />
       </Section>
 
       <Section id="rsvp" title="Potvrzení účasti">

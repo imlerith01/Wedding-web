@@ -20,7 +20,6 @@ const Navbar = () => {
     { label: 'Místo', href: '#location' },
     { label: 'Dress code', href: '#dresscode' },
     { label: 'Dary', href: '#gifts' },
-    { label: 'FAQ', href: '#faq' },
     { label: 'RSVP', href: '#rsvp' },
   ];
 
