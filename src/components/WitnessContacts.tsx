@@ -9,14 +9,14 @@ interface Witness {
 const WitnessContacts = () => {
   const witnesses: Witness[] = [
     {
-      name: 'Marek Dobeš',
-      phone: '+420 736 208 374',
-      image: '/images/marek-dobes.jpg',
-    },
-    {
       name: 'Anežka Sobolová',
       phone: '+420 736 448 664',
       image: '/images/anezka-sobolova.jpg',
+    },
+    {
+      name: 'Marek Dobeš',
+      phone: '+420 736 208 374',
+      image: '/images/marek-dobes.jpg',
     },
   ];
 
