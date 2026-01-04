@@ -11,12 +11,12 @@ const WitnessContacts = () => {
     {
       name: 'Anežka Sobolová',
       phone: '+420 736 448 664',
-      image: '/images/anezka-sobolova.jpg',
+      image: '/images/marek-dobes.jpg',
     },
     {
       name: 'Marek Dobeš',
       phone: '+420 736 208 374',
-      image: '/images/marek-dobes.jpg',
+      image: '/images/anezka-sobolova.jpg',
     },
   ];
 
