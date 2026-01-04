@@ -8,10 +8,14 @@ export default {
     extend: {
       colors: {
         wedding: {
-          primary: '#D4A574',
-          secondary: '#E8D5C4',
-          accent: '#F5E6D3',
-          dark: '#8B6F47',
+          primary: '#1F3A2D',      // Forest / bamboo green
+          secondary: '#2F5D43',     // Deep moss
+          accent: '#7FAE6A',        // Leaf highlight
+          dark: '#1C1F1D',          // Charcoal / text
+          background: '#F2EFE6',    // Warm sand
+          card: '#E7E2D6',          // Soft stone
+          muted: '#6B5A4A',         // Muted brown
+          'text-secondary': '#2C3A33', // Secondary text
         },
       },
       fontFamily: {

@@ -8,7 +8,8 @@
   }
   
   body {
-    @apply font-sans text-gray-800 antialiased;
+    @apply font-sans text-wedding-dark antialiased;
+    background-color: #F2EFE6;
   }
 }
 
@@ -18,15 +19,17 @@
   }
   
   .card {
-    @apply bg-white rounded-lg shadow-sm p-6 sm:p-8;
+    @apply bg-wedding-card rounded-lg shadow-sm p-6 sm:p-8;
+    border: 1px solid rgba(31, 58, 45, 0.15);
+    box-shadow: 0 1px 3px 0 rgba(31, 58, 45, 0.08);
   }
   
   .btn-primary {
-    @apply bg-wedding-primary hover:bg-wedding-dark text-white font-medium px-6 py-3 rounded-lg transition-colors duration-200;
+    @apply bg-wedding-primary hover:bg-wedding-secondary text-[#F7F5EE] font-medium px-6 py-3 rounded-lg transition-colors duration-200;
   }
   
   .btn-secondary {
-    @apply bg-wedding-secondary hover:bg-wedding-primary text-wedding-dark font-medium px-6 py-3 rounded-lg transition-colors duration-200;
+    @apply bg-transparent border-2 border-wedding-secondary text-wedding-secondary hover:bg-wedding-accent/15 font-medium px-6 py-3 rounded-lg transition-colors duration-200;
   }
 }
 

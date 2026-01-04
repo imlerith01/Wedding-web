@@ -67,11 +67,11 @@ const RSVPForm = () => {
   if (submitted) {
     return (
       <div className="card text-center">
-        <CheckCircle className="mx-auto text-wedding-primary mb-4" size={64} />
+        <CheckCircle className="mx-auto text-wedding-accent mb-4" size={64} />
         <h3 className="text-2xl font-serif text-wedding-dark mb-4">
           Děkujeme!
         </h3>
-        <p className="text-gray-600 mb-6">
+        <p className="text-wedding-text-secondary mb-6">
           Děkujeme za odpověď, moc se na vás těšíme ❤️
         </p>
         <button
@@ -104,7 +104,7 @@ const RSVPForm = () => {
       </h3>
 
       {error && (
-        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
+        <div className="mb-6 p-4 bg-red-50/80 border border-red-300/50 rounded-lg flex items-start gap-3">
           <AlertCircle className="text-red-600 flex-shrink-0 mt-0.5" size={20} />
           <p className="text-red-700 text-sm">{error}</p>
         </div>
@@ -112,7 +112,7 @@ const RSVPForm = () => {
 
       <div className="space-y-6">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="name" className="block text-sm font-medium text-wedding-dark mb-2">
             Jméno a příjmení *
           </label>
           <input
@@ -122,13 +122,13 @@ const RSVPForm = () => {
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-wedding-primary focus:border-transparent outline-none"
+            className="w-full px-4 py-2 bg-[#F7F5EE] border border-wedding-primary/20 rounded-lg focus:ring-2 focus:ring-wedding-accent focus:border-wedding-accent outline-none text-wedding-dark"
             placeholder="Jan Novák"
           />
         </div>
 
         <div>
-          <label htmlFor="contact" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="contact" className="block text-sm font-medium text-wedding-dark mb-2">
             E-mail nebo telefon *
           </label>
           <input
@@ -138,13 +138,13 @@ const RSVPForm = () => {
             required
             value={formData.contact}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-wedding-primary focus:border-transparent outline-none"
+            className="w-full px-4 py-2 bg-[#F7F5EE] border border-wedding-primary/20 rounded-lg focus:ring-2 focus:ring-wedding-accent focus:border-wedding-accent outline-none text-wedding-dark"
             placeholder="jan.novak@email.cz nebo +420 123 456 789"
           />
         </div>
 
         <div>
-          <label htmlFor="attendance" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="attendance" className="block text-sm font-medium text-wedding-dark mb-2">
             Potvrzuji účast *
           </label>
           <div className="flex gap-4">
@@ -155,10 +155,10 @@ const RSVPForm = () => {
                 value="yes"
                 checked={formData.attendance === 'yes'}
                 onChange={handleChange}
-                className="mr-2 text-wedding-primary focus:ring-wedding-primary"
+                className="mr-2 text-wedding-accent focus:ring-wedding-accent"
                 required
               />
-              <span className="text-gray-700">Ano, přijdu</span>
+              <span className="text-wedding-dark">Ano, přijdu</span>
             </label>
             <label className="flex items-center">
               <input
@@ -167,17 +167,17 @@ const RSVPForm = () => {
                 value="no"
                 checked={formData.attendance === 'no'}
                 onChange={handleChange}
-                className="mr-2 text-wedding-primary focus:ring-wedding-primary"
+                className="mr-2 text-wedding-accent focus:ring-wedding-accent"
                 required
               />
-              <span className="text-gray-700">Bohužel nemohu</span>
+              <span className="text-wedding-dark">Bohužel nemohu</span>
             </label>
           </div>
         </div>
 
         {formData.attendance === 'yes' && (
           <div>
-            <label htmlFor="guests" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="guests" className="block text-sm font-medium text-wedding-dark mb-2">
               Počet osob (včetně vás) *
             </label>
             <select
@@ -186,7 +186,7 @@ const RSVPForm = () => {
               required={formData.attendance === 'yes'}
               value={formData.guests}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-wedding-primary focus:border-transparent outline-none"
+              className="w-full px-4 py-2 bg-[#F7F5EE] border border-wedding-primary/20 rounded-lg focus:ring-2 focus:ring-wedding-accent focus:border-wedding-accent outline-none text-wedding-dark"
             >
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
                 <option key={num} value={num}>
@@ -198,7 +198,7 @@ const RSVPForm = () => {
         )}
 
         <div>
-          <label htmlFor="notes" className="block text-sm font-medium text-gray-700 mb-2">
+          <label htmlFor="notes" className="block text-sm font-medium text-wedding-dark mb-2">
             Poznámky (dietní omezení, alergie, atd.)
           </label>
           <textarea
@@ -207,7 +207,7 @@ const RSVPForm = () => {
             rows={4}
             value={formData.notes}
             onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-wedding-primary focus:border-transparent outline-none resize-none"
+            className="w-full px-4 py-2 bg-[#F7F5EE] border border-wedding-primary/20 rounded-lg focus:ring-2 focus:ring-wedding-accent focus:border-wedding-accent outline-none resize-none text-wedding-dark"
             placeholder="Např. vegetariánská strava, alergie na ořechy..."
           />
         </div>
