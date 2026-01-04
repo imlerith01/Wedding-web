@@ -104,9 +104,9 @@ export const siteData: SiteData = {
   ],
   dressCode: {
     title: "Dress code",
-    text: "Dress code nemáme – přijďte prosím v tom, v čem se cítíte hezky a pohodlně. Hlavně ať se spolu celý den užijeme.",
+    text: "Dress code nemáme – přijďte prosím v tom, v čem se cítíte dobře a pohodlně. Hlavně ať se spolu celý den užijeme.",
     // Delší verze (alternativa):
-    // textLong: "Dress code nemáme – přijďte prosím v tom, v čem se cítíte hezky a pohodlně. Hlavně ať se spolu celý den užijeme a vytvoříme společně krásné vzpomínky. Důležité je, abyste se cítili dobře a mohli si svatbu užít naplno."
+    // textLong: "Dress code nemáme – přijďte prosím v tom, v čem se cítíte dobře a pohodlně. Hlavně ať se spolu celý den užijeme a vytvoříme společně krásné vzpomínky. Důležité je, abyste se cítili dobře a mohli si svatbu užít naplno."
   },
   gifts: {
     title: "Dary",
