@@ -15,6 +15,7 @@ export interface SiteData {
     city: string;
     mapUrl: string;
     website?: string;
+    images?: string[];
   };
   about: {
     title: string;
@@ -65,6 +66,10 @@ export const siteData: SiteData = {
     city: "Jižní Morava",
     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2604.5!2d16.574386!3d48.9285721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47131f1a2b3c4d5e%3A0x1234567890abcdef!2zVmluYcWIc3R2w60gSG9sw6Fua2s!5e0!3m2!1scs!2scz!4v1700000000000!5m2!1scs!2scz",
     website: "https://www.vinarskydvurnafare.cz/svatby/",
+    images: [
+      "/images/16-0212-293-nahled.jpg",
+      "/images/Foto-28.6.2025-4-scaled.jpg",
+    ],
   },
   about: {
     title: "O nás",

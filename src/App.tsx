@@ -47,6 +47,27 @@ function App() {
               </a>
             )}
           </div>
+
+          {/* Fotografie místa */}
+          {siteData.location.images && siteData.location.images.length > 0 && (
+            <div className="max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {siteData.location.images.map((image, index) => (
+                  <div
+                    key={index}
+                    className="rounded-lg overflow-hidden shadow-md aspect-[4/3]"
+                  >
+                    <img
+                      src={image}
+                      alt={`${siteData.location.name} - fotografie ${index + 1}`}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
           
           <div className="max-w-4xl mx-auto">
             <div className="rounded-lg overflow-hidden shadow-md">
