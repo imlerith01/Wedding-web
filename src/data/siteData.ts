@@ -14,6 +14,7 @@ export interface SiteData {
     address: string;
     city: string;
     mapUrl: string;
+    website?: string;
   };
   about: {
     title: string;
@@ -48,50 +49,53 @@ export interface SiteData {
   contact: {
     email?: string;
     phone?: string;
+    phoneBride?: string;
+    phoneGroom?: string;
   };
 }
 
 export const siteData: SiteData = {
   couple: {
-    bride: "Anna",
-    groom: "Tomáš",
+    bride: "Katka",
+    groom: "Kuba",
   },
   date: {
-    day: "15",
-    month: "června",
-    year: "2024",
+    day: "5",
+    month: "září",
+    year: "2026",
     time: "14:00",
   },
   location: {
-    name: "Zámek Nové Město",
-    address: "Zámecká 123",
-    city: "Nové Město nad Metují",
-    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.123456789!2d16.1234567!3d50.1234567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTDCsDA3JzI0LjQiTiAxNsKwMDcnMjQuNCJF!5e0!3m2!1scs!2scz!4v1234567890123!5m2!1scs!2scz",
+    name: "Vinařství Holánek",
+    address: "Vinařský dvůr Na Faře",
+    city: "Jižní Morava",
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2604.5!2d16.574386!3d48.9285721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47131f1a2b3c4d5e%3A0x1234567890abcdef!2zVmluYcWIc3R2w60gSG9sw6Fua2s!5e0!3m2!1scs!2scz!4v1700000000000!5m2!1scs!2scz",
+    website: "https://www.vinarskydvurnafare.cz/svatby/",
   },
   about: {
     title: "O nás",
-    text: "Jsme Anna a Tomáš a rádi bychom vás pozvali na náš velký den. Těšíme se, že tento významný okamžik prožijeme společně s našimi nejbližšími.",
+    text: "Jsme Kuba a Katka a rádi bychom vás pozvali na náš velký den. Těšíme se, že tento významný okamžik prožijeme společně s našimi nejbližšími v krásném prostředí vinařství na jižní Moravě.",
   },
   program: [
     {
       time: "14:00",
       title: "Příjezd hostů",
-      description: "Přivítání a občerstvení",
+      description: "Přivítání a občerstvení ve vinařském dvoře",
     },
     {
       time: "14:30",
       title: "Obřad",
-      description: "Svatební obřad v zámecké kapli",
+      description: "Svatební obřad v prostorách vinařství",
     },
     {
       time: "15:30",
       title: "Gratulace a focení",
-      description: "Společné fotografie s hosty",
+      description: "Společné fotografie s hosty mezi vinicemi",
     },
     {
       time: "16:30",
       title: "Hostina",
-      description: "Svatební hostina v zámeckém sále",
+      description: "Svatební hostina ve vinařském dvoře",
     },
     {
       time: "20:00",
@@ -107,16 +111,16 @@ export const siteData: SiteData = {
   transportation: {
     title: "Doprava",
     items: [
-      "Parkování je k dispozici přímo u zámku (kapacita 50 aut)",
-      "Nejbližší vlaková stanice: Nové Město nad Metují (2 km od zámku)",
-      "Možnost objednání svatebního autobusu z centra města (kontaktujte nás)",
+      "Parkování je k dispozici přímo u vinařství",
+      "Nejbližší vlaková stanice: Znojmo (cca 15 km od vinařství)",
+      "Možnost objednání svatebního autobusu (kontaktujte nás)",
     ],
   },
   accommodation: {
     title: "Ubytování",
     items: [
-      "Hotel Zámek (přímo v areálu) - rezervace na jméno Nováková/Svoboda",
-      "Penzion U Zámku (200 m od zámku) - tel: +420 123 456 789",
+      "Vinařský dvůr Na Faře nabízí ubytování přímo v areálu - rezervace na jméno Kuba/Katka",
+      "Další možnosti ubytování v okolí Znojma",
       "Doporučujeme rezervovat ubytování s předstihem",
     ],
   },
@@ -127,12 +131,11 @@ export const siteData: SiteData = {
   gifts: {
     title: "Dary",
     text: "Vaše přítomnost je pro nás tím největším darem. Pokud byste nás přesto chtěli potěšit, oceníme příspěvek na svatební cestu.",
-    account: "1234567890/0800",
   },
   faq: [
     {
       question: "Do kdy můžu potvrdit účast?",
-      answer: "Prosíme o potvrzení účasti do 1. května 2024 pomocí RSVP formuláře níže.",
+      answer: "Prosíme o potvrzení účasti do 1. srpna 2026 pomocí RSVP formuláře níže.",
     },
     {
       question: "Mohu přijít s doprovodem?",
@@ -148,12 +151,13 @@ export const siteData: SiteData = {
     },
     {
       question: "Kde najdu více informací?",
-      answer: "V případě dotazů nás kontaktujte na e-mailu nebo telefonu uvedeném v patičce stránky.",
+      answer: "V případě dotazů nás kontaktujte na telefonu uvedeném v patičce stránky.",
     },
   ],
   contact: {
-    email: "anna.tomas@svatba.cz",
-    phone: "+420 123 456 789",
+    phoneGroom: "+420 739 148 787",
+    phoneBride: "+420 732 382 093",
+    phone: "+420 739 148 787",
   },
 };
 

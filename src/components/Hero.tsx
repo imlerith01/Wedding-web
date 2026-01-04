@@ -18,9 +18,9 @@ const Hero = () => {
         </div>
         
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-wedding-dark mb-4">
-          {siteData.couple.bride}
-          <span className="mx-4 text-wedding-primary">&</span>
           {siteData.couple.groom}
+          <span className="mx-4 text-wedding-primary">&</span>
+          {siteData.couple.bride}
         </h1>
         
         <p className="text-xl sm:text-2xl md:text-3xl text-gray-600 mb-8 font-serif">

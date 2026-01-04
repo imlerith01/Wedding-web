@@ -35,7 +35,17 @@ function App() {
               {siteData.location.name}
             </h3>
             <p className="text-gray-600 mb-1">{siteData.location.address}</p>
-            <p className="text-gray-600">{siteData.location.city}</p>
+            <p className="text-gray-600 mb-4">{siteData.location.city}</p>
+            {siteData.location.website && (
+              <a
+                href={siteData.location.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-wedding-primary hover:text-wedding-dark underline transition-colors duration-200"
+              >
+                Více informací o místě →
+              </a>
+            )}
           </div>
           
           <div className="max-w-4xl mx-auto">
