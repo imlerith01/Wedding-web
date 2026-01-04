@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Countdown from './components/Countdown';
 import Section from './components/Section';
 import Timeline from './components/Timeline';
 import RSVPForm from './components/RSVPForm';
@@ -13,6 +14,8 @@ function App() {
       <Navbar />
       
       <Hero />
+
+      <Countdown />
 
       <Section id="about" title={siteData.about.title}>
         <div className="card max-w-2xl mx-auto text-center">
