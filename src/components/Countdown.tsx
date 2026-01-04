@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { siteData } from '../data/siteData';
 
 interface TimeLeft {
   days: number;
