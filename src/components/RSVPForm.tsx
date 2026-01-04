@@ -1,24 +1,58 @@
 import { useState, FormEvent } from 'react';
-import { Send, CheckCircle } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle } from 'lucide-react';
 
 const RSVPForm = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: '',
     contact: '',
     guests: '1',
     notes: '',
-    attendance: 'yes',
+    attendance: 'yes' as 'yes' | 'no',
   });
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Netlify Forms will handle the submission
-    setSubmitted(true);
-    // Scroll to top of form after submission
-    setTimeout(() => {
-      document.getElementById('rsvp')?.scrollIntoView({ behavior: 'smooth' });
-    }, 100);
+    setLoading(true);
+    setError(null);
+
+    try {
+      // Prepare data for API
+      const payload = {
+        name: formData.name.trim(),
+        contact: formData.contact.trim(),
+        attendance: formData.attendance,
+        guests: formData.attendance === 'yes' ? parseInt(formData.guests) : 0,
+        note: formData.notes.trim() || undefined,
+      };
+
+      const response = await fetch('/.netlify/functions/rsvp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.ok) {
+        throw new Error(data.message || 'Chyba při odesílání formuláře');
+      }
+
+      // Success
+      setSubmitted(true);
+      // Scroll to top of form after submission
+      setTimeout(() => {
+        document.getElementById('rsvp')?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Chyba při odesílání formuláře');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (
@@ -38,11 +72,12 @@ const RSVPForm = () => {
           Děkujeme!
         </h3>
         <p className="text-gray-600 mb-6">
-          Vaše potvrzení účasti bylo úspěšně odesláno. Těšíme se na vás!
+          Děkujeme za odpověď, moc se na vás těšíme ❤️
         </p>
         <button
           onClick={() => {
             setSubmitted(false);
+            setError(null);
             setFormData({
               name: '',
               contact: '',
@@ -61,19 +96,19 @@ const RSVPForm = () => {
 
   return (
     <form
-      name="rsvp"
-      method="POST"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
       className="card max-w-2xl mx-auto"
     >
-      <input type="hidden" name="form-name" value="rsvp" />
-      <input type="hidden" name="bot-field" />
-
       <h3 className="text-2xl font-serif text-wedding-dark mb-6 text-center">
         Potvrzení účasti
       </h3>
+
+      {error && (
+        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-start gap-3">
+          <AlertCircle className="text-red-600 flex-shrink-0 mt-0.5" size={20} />
+          <p className="text-red-700 text-sm">{error}</p>
+        </div>
+      )}
 
       <div className="space-y-6">
         <div>
@@ -153,7 +188,7 @@ const RSVPForm = () => {
               onChange={handleChange}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-wedding-primary focus:border-transparent outline-none"
             >
-              {[1, 2, 3, 4, 5, 6].map((num) => (
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
                 <option key={num} value={num}>
                   {num} {num === 1 ? 'osoba' : num < 5 ? 'osoby' : 'osob'}
                 </option>
@@ -179,10 +214,11 @@ const RSVPForm = () => {
 
         <button
           type="submit"
-          className="btn-primary w-full flex items-center justify-center gap-2"
+          disabled={loading}
+          className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <Send size={20} />
-          Odeslat potvrzení
+          {loading ? 'Odesílám…' : 'Odeslat potvrzení'}
         </button>
       </div>
     </form>
