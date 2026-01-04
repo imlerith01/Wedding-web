@@ -18,7 +18,6 @@ const Navbar = () => {
     { label: 'O nás', href: '#about' },
     { label: 'Program', href: '#program' },
     { label: 'Místo', href: '#location' },
-    { label: 'Doprava', href: '#transport' },
     { label: 'Dress code', href: '#dresscode' },
     { label: 'Dary', href: '#gifts' },
     { label: 'FAQ', href: '#faq' },

@@ -25,17 +25,11 @@ export interface SiteData {
     title: string;
     description: string;
   }>;
-  transportation: {
-    title: string;
-    items: string[];
-  };
-  accommodation: {
-    title: string;
-    items: string[];
-  };
   dressCode: {
     title: string;
     text: string;
+    // Delší verze (alternativa):
+    // textLong: "Dress code nemáme – přijďte prosím v tom, v čem se cítíte hezky a pohodlně. Hlavně ať se spolu celý den užijeme a vytvoříme společně krásné vzpomínky. Důležité je, abyste se cítili dobře a mohli si svatbu užít naplno."
   };
   gifts: {
     title: string;
@@ -63,7 +57,7 @@ export const siteData: SiteData = {
     day: "5",
     month: "září",
     year: "2026",
-    time: "14:00",
+    time: "11:00",
   },
   location: {
     name: "Vinařství Holánek",
@@ -78,55 +72,41 @@ export const siteData: SiteData = {
   },
   program: [
     {
-      time: "14:00",
+      time: "11:00",
       title: "Příjezd hostů",
       description: "Přivítání a občerstvení ve vinařském dvoře",
     },
     {
-      time: "14:30",
-      title: "Obřad",
+      time: "11:30",
+      title: "Svatební obřad",
       description: "Svatební obřad v prostorách vinařství",
     },
     {
-      time: "15:30",
-      title: "Gratulace a focení",
+      time: "12:30",
+      title: "Gratulace & focení",
       description: "Společné fotografie s hosty mezi vinicemi",
     },
     {
-      time: "16:30",
-      title: "Hostina",
+      time: "13:30",
+      title: "Slavnostní hostina",
       description: "Svatební hostina ve vinařském dvoře",
     },
     {
-      time: "20:00",
+      time: "15:00",
       title: "První tanec",
       description: "Otevření tanečního parketu",
     },
     {
-      time: "22:00",
+      time: "16:00",
       title: "Krájení dortu",
       description: "Společné krájení svatebního dortu",
     },
   ],
-  transportation: {
-    title: "Doprava",
-    items: [
-      "Parkování je k dispozici přímo u vinařství",
-      "Nejbližší vlaková stanice: Znojmo (cca 15 km od vinařství)",
-      "Možnost objednání svatebního autobusu (kontaktujte nás)",
-    ],
-  },
-  accommodation: {
-    title: "Ubytování",
-    items: [
-      "Vinařský dvůr Na Faře nabízí ubytování přímo v areálu - rezervace na jméno Kuba/Katka",
-      "Další možnosti ubytování v okolí Znojma",
-      "Doporučujeme rezervovat ubytování s předstihem",
-    ],
-  },
   dressCode: {
     title: "Dress code",
-    text: "Prosíme o slavnostní oblečení. Pánové: oblek nebo košile s kalhotami. Dámy: společenské šaty nebo kostým. Barvy: prosíme vyhnout se bílé barvě.",
+    text: "Dress code nemáme – přijďte prosím v tom, v čem se cítíte hezky a pohodlně. Hlavně ať se spolu celý den užijeme.",
+    // Delší verze (alternativa):
+    // textLong: "Dress code nemáme – přijďte prosím v tom, v čem se cítíte hezky a pohodlně. Hlavně ať se spolu celý den užijeme a vytvoříme společně krásné vzpomínky. Důležité je, abyste se cítili dobře a mohli si svatbu užít naplno."
   },
   gifts: {
     title: "Dary",

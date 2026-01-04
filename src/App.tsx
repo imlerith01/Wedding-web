@@ -6,7 +6,7 @@ import FAQ from './components/FAQ';
 import RSVPForm from './components/RSVPForm';
 import Footer from './components/Footer';
 import { siteData } from './data/siteData';
-import { MapPin, Car, Home, Shirt, Gift } from 'lucide-react';
+import { MapPin, Shirt, Gift } from 'lucide-react';
 
 function App() {
   return (
@@ -61,44 +61,6 @@ function App() {
                 title="Mapa místa konání"
               ></iframe>
             </div>
-          </div>
-        </div>
-      </Section>
-
-      <Section id="transport" title="Doprava & ubytování">
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          <div className="card">
-            <div className="flex items-center gap-3 mb-4">
-              <Car className="text-wedding-primary" size={24} />
-              <h3 className="text-xl font-semibold text-wedding-dark">
-                {siteData.transportation.title}
-              </h3>
-            </div>
-            <ul className="space-y-2 text-gray-600">
-              {siteData.transportation.items.map((item, index) => (
-                <li key={index} className="flex items-start gap-2">
-                  <span className="text-wedding-primary mt-1">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="card">
-            <div className="flex items-center gap-3 mb-4">
-              <Home className="text-wedding-primary" size={24} />
-              <h3 className="text-xl font-semibold text-wedding-dark">
-                {siteData.accommodation.title}
-              </h3>
-            </div>
-            <ul className="space-y-2 text-gray-600">
-              {siteData.accommodation.items.map((item, index) => (
-                <li key={index} className="flex items-start gap-2">
-                  <span className="text-wedding-primary mt-1">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       </Section>
