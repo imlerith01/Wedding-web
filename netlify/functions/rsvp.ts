@@ -29,19 +29,15 @@ function validateRSVP(data: any): { valid: boolean; message?: string } {
     return { valid: false, message: "Účast musí být 'yes' nebo 'no'" };
   }
 
-  // Validate guests
-  if (typeof data.guests !== "number") {
+  // Validate guests (optional, default to 0)
+  if (data.guests === undefined || data.guests === null) {
+    data.guests = 0;
+  } else if (typeof data.guests !== "number") {
     return { valid: false, message: "Počet hostů musí být číslo" };
   }
 
-  if (data.attendance === "yes") {
-    if (data.guests < 1 || data.guests > 10) {
-      return { valid: false, message: "Počet hostů musí být mezi 1 a 10" };
-    }
-  } else {
-    // If attendance is "no", set guests to 0
-    data.guests = 0;
-  }
+  // Guests je nyní vždy 0, protože pole bylo odstraněno z formuláře
+  data.guests = 0;
 
   // Validate note (optional, max 500 chars)
   if (data.note && typeof data.note === "string" && data.note.length > 500) {

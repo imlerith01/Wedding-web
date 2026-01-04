@@ -8,7 +8,6 @@ const RSVPForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     contact: '',
-    guests: '1',
     notes: '',
     attendance: 'yes' as 'yes' | 'no',
   });
@@ -24,7 +23,7 @@ const RSVPForm = () => {
         name: formData.name.trim(),
         contact: formData.contact.trim(),
         attendance: formData.attendance,
-        guests: formData.attendance === 'yes' ? parseInt(formData.guests) : 0,
+        guests: 0, // Počet osob již není v formuláři, vždy 0
         note: formData.notes.trim() || undefined,
       };
 
@@ -56,7 +55,7 @@ const RSVPForm = () => {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setFormData({
       ...formData,
@@ -81,14 +80,13 @@ const RSVPForm = () => {
             setFormData({
               name: '',
               contact: '',
-              guests: '1',
               notes: '',
               attendance: 'yes',
             });
           }}
           className="btn-secondary"
         >
-          Odeslat další odpověď
+          Přihlásit dalšího hosta
         </button>
       </div>
     );
@@ -99,10 +97,6 @@ const RSVPForm = () => {
       onSubmit={handleSubmit}
       className="card max-w-2xl mx-auto"
     >
-      <h3 className="text-2xl font-serif text-wedding-dark mb-6 text-center">
-        Potvrzení účasti
-      </h3>
-
       {error && (
         <div className="mb-6 p-4 bg-red-50/80 border border-red-300/50 rounded-lg flex items-start gap-3">
           <AlertCircle className="text-red-600 flex-shrink-0 mt-0.5" size={20} />
@@ -174,28 +168,6 @@ const RSVPForm = () => {
             </label>
           </div>
         </div>
-
-        {formData.attendance === 'yes' && (
-          <div>
-            <label htmlFor="guests" className="block text-sm font-medium text-wedding-dark mb-2">
-              Počet osob (včetně vás) *
-            </label>
-            <select
-              id="guests"
-              name="guests"
-              required={formData.attendance === 'yes'}
-              value={formData.guests}
-              onChange={handleChange}
-              className="w-full px-4 py-2 bg-[#F7F5EE] border border-wedding-primary/20 rounded-lg focus:ring-2 focus:ring-wedding-accent focus:border-wedding-accent outline-none text-wedding-dark"
-            >
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
-                <option key={num} value={num}>
-                  {num} {num === 1 ? 'osoba' : num < 5 ? 'osoby' : 'osob'}
-                </option>
-              ))}
-            </select>
-          </div>
-        )}
 
         <div>
           <label htmlFor="notes" className="block text-sm font-medium text-wedding-dark mb-2">
