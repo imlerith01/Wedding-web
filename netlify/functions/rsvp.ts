@@ -1,7 +1,8 @@
-import { neon } from "@netlify/neon";
+import { neon } from "@neondatabase/serverless";
 import type { Handler, HandlerEvent, HandlerResponse } from "@netlify/functions";
 
-const sql = neon();
+// Get database URL from environment variable (automatically provided by Netlify DB)
+const sql = neon(process.env.NETLIFY_DATABASE_URL || "");
 
 interface RSVPRequest {
   name: string;
