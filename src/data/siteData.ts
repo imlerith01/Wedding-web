@@ -1,4 +1,7 @@
 export interface SiteData {
+  hero: {
+    image?: string;
+  };
   couple: {
     bride: string;
     groom: string;
@@ -46,6 +49,9 @@ export interface SiteData {
 }
 
 export const siteData: SiteData = {
+  hero: {
+    image: "/images/IMG-20251014-WA0013.jpg",
+  },
   couple: {
     bride: "Katka",
     groom: "Kuba",
