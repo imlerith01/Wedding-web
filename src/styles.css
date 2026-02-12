@@ -203,6 +203,11 @@
     pointer-events: none;
   }
   
+  /* Hero rohové dekorace – zelený nádech (SVG je šedé, přebarvíme na primary) */
+  .hero-floral-tint {
+    filter: brightness(0) saturate(100%) invert(48%) sepia(25%) saturate(800%) hue-rotate(86deg);
+  }
+
   /* Animace pro SuccessCard */
   @keyframes fadeInUp {
     from {

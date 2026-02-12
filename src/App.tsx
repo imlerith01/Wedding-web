@@ -31,13 +31,13 @@ function App() {
 
       <SectionDivider />
 
-      <Section id="program" title="Program dne" variant="alt">
+      <Section id="program" title="Program dne" variant="alt" showFloralDivider>
         <Timeline />
       </Section>
 
       <SectionDivider />
 
-      <Section id="location" title="Místo konání" variant="default">
+      <Section id="location" title="Místo konání" variant="default" showFloralDivider>
         <div className="space-y-6">
           <div className="card max-w-2xl mx-auto text-center">
             <MapPin className="mx-auto text-wedding-primary mb-4" size={32} />
@@ -127,7 +127,7 @@ function App() {
 
       <SectionDivider />
 
-      <Section id="rsvp" title="Potvrzení účasti" variant="alt">
+      <Section id="rsvp" title="Potvrzení účasti" variant="alt" showFloralDivider>
         <RSVPForm />
       </Section>
 

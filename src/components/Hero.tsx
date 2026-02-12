@@ -7,6 +7,28 @@ const Hero = () => {
       id="hero"
       className="min-h-screen flex items-center relative overflow-hidden hero-background"
     >
+      {/* Rohové dekorace - traviny (subtilní, pod obsahem) */}
+      <div
+        className="absolute top-0 left-0 z-0 pointer-events-none opacity-[0.07] hidden sm:block sm:scale-100 md:scale-100"
+        aria-hidden
+      >
+        <img
+          src="/botanical/Floral 21.svg"
+          alt=""
+          className="hero-floral-tint w-[120px] sm:w-[140px] md:w-[160px] h-auto"
+        />
+      </div>
+      <div
+        className="absolute bottom-0 right-0 z-0 pointer-events-none opacity-[0.07] hidden sm:block sm:scale-[0.7] md:scale-100"
+        aria-hidden
+      >
+        <img
+          src="/botanical/Floral 25.svg"
+          alt=""
+          className="hero-floral-tint w-[80px] sm:w-[100px] md:w-[120px] h-auto"
+        />
+      </div>
+
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 mt-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Levý blok - Text */}
