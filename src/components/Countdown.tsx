@@ -66,14 +66,16 @@ const Countdown = () => {
 
   if (isExpired) {
     return (
-      <section className="section-container">
-        <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl font-serif text-wedding-dark mb-4">
-            Už se nemůžeme dočkat.
-          </h2>
-          <p className="text-2xl sm:text-3xl text-wedding-primary font-serif">
-            Svatba začíná! 🎉
-          </p>
+      <section className="section">
+        <div className="section-container">
+          <div className="text-center">
+            <h2 className="text-3xl sm:text-4xl font-serif text-wedding-dark mb-4">
+              Už se nemůžeme dočkat.
+            </h2>
+            <p className="text-2xl sm:text-3xl text-wedding-primary font-serif">
+              Svatba začíná! 🎉
+            </p>
+          </div>
         </div>
       </section>
     );
@@ -81,14 +83,16 @@ const Countdown = () => {
 
   if (!timeLeft) {
     return (
-      <section className="section-container">
-        <div className="text-center">
-          <h2 className="text-3xl sm:text-4xl font-serif text-wedding-dark mb-4">
-            Už se nemůžeme dočkat.
-          </h2>
-          <p className="text-lg text-wedding-text-secondary">
-            Datum svatby není nastavené.
-          </p>
+      <section className="section">
+        <div className="section-container">
+          <div className="text-center">
+            <h2 className="text-3xl sm:text-4xl font-serif text-wedding-dark mb-4">
+              Už se nemůžeme dočkat.
+            </h2>
+            <p className="text-lg text-wedding-text-secondary">
+              Datum svatby není nastavené.
+            </p>
+          </div>
         </div>
       </section>
     );
@@ -108,25 +112,27 @@ const Countdown = () => {
   );
 
   return (
-    <section className="section-container">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl sm:text-4xl font-serif text-wedding-dark text-center mb-8">
-          Už se nemůžeme dočkat.
-        </h2>
-        
-        {/* Jemná dekorativní linka */}
-        <div className="flex items-center justify-center mb-8">
-          <div className="w-16 h-px bg-wedding-primary/30"></div>
-          <div className="w-2 h-2 rounded-full bg-wedding-primary/50 mx-3"></div>
-          <div className="w-16 h-px bg-wedding-primary/30"></div>
-        </div>
+    <section className="section">
+      <div className="section-container">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-serif text-wedding-dark text-center mb-8">
+            Už se nemůžeme dočkat.
+          </h2>
+          
+          {/* Jemná dekorativní linka */}
+          <div className="flex items-center justify-center mb-8">
+            <div className="w-16 h-px bg-wedding-primary/30"></div>
+            <div className="w-2 h-2 rounded-full bg-wedding-primary/50 mx-3"></div>
+            <div className="w-16 h-px bg-wedding-primary/30"></div>
+          </div>
 
-        {/* Timer grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-          <TimeUnit value={timeLeft.days} label="Dní" />
-          <TimeUnit value={timeLeft.hours} label="Hodin" />
-          <TimeUnit value={timeLeft.minutes} label="Minut" />
-          <TimeUnit value={timeLeft.seconds} label="Sekund" />
+          {/* Timer grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            <TimeUnit value={timeLeft.days} label="Dní" />
+            <TimeUnit value={timeLeft.hours} label="Hodin" />
+            <TimeUnit value={timeLeft.minutes} label="Minut" />
+            <TimeUnit value={timeLeft.seconds} label="Sekund" />
+          </div>
         </div>
       </div>
     </section>

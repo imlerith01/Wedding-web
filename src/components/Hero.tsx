@@ -7,7 +7,7 @@ const Hero = () => {
       id="hero"
       className="min-h-screen flex items-center relative overflow-hidden hero-background"
     >
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 mt-16">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 mt-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Levý blok - Text */}
           <div className="text-center lg:text-left order-2 lg:order-1">

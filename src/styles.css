@@ -2,9 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Luční SVG pattern - jemný, subtilní */
+/* Design tokeny - Luční barevné schéma */
 :root {
-  --meadow-pattern: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='meadow' x='0' y='0' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Crect width='100' height='100' fill='%23FAF8F3'/%3E%3Cg opacity='0.03'%3E%3Cpath d='M20 80 Q30 70 40 80 T60 80' stroke='%236B8E5A' stroke-width='0.5' fill='none'/%3E%3Cpath d='M25 85 Q35 75 45 85 T65 85' stroke='%236B8E5A' stroke-width='0.4' fill='none'/%3E%3Cpath d='M15 75 Q25 65 35 75 T55 75' stroke='%238FA67A' stroke-width='0.4' fill='none'/%3E%3Ccircle cx='30' cy='70' r='1.5' fill='%23D4A5A5'/%3E%3Ccircle cx='50' cy='68' r='1' fill='%23D4A5A5'/%3E%3Ccircle cx='70' cy='72' r='1.2' fill='%23D4A5A5'/%3E%3Cpath d='M80 75 Q85 70 90 75' stroke='%236B8E5A' stroke-width='0.3' fill='none'/%3E%3Ccircle cx='85' cy='70' r='0.8' fill='%23D4A5A5'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23meadow)'/%3E%3C/svg%3E");
+  /* Barvy pozadí */
+  --bg: #FAF8F3;                    /* Teplá smetanová - základ */
+  --bg-alt: #F7F4ED;                 /* O odstín tmavší béžová pro alternující sekce */
+  --surface: #FFFFFF;                 /* Bílá pro karty */
+  --text: #2C3A2F;                    /* Tmavě olivová - hlavní text */
+  --muted: #6B7A6A;                  /* Šedo-olivová - sekundární text */
+  --border: #D4D4C4;                  /* Jemná olivovo-šedá */
+  --primary: #6B8E5A;                 /* Šalvějově zelená */
+  --primary-hover: #5A7A4A;           /* Tmavší zelená */
+  --accent: #D4A5A5;                  /* Tlumená růžová */
+  
+  /* Stíny */
+  --shadow-sm: 0 1px 2px 0 rgba(44, 58, 47, 0.04), 0 2px 4px 0 rgba(44, 58, 47, 0.03);
+  --shadow-md: 0 2px 8px 0 rgba(44, 58, 47, 0.06), 0 1px 2px 0 rgba(44, 58, 47, 0.04);
+  --shadow-lg: 0 4px 12px 0 rgba(44, 58, 47, 0.08), 0 2px 4px 0 rgba(44, 58, 47, 0.05);
+  
+  /* Pattern opacity */
+  --pattern-opacity-subtle: 0.02;     /* Velmi jemný pro body */
+  --pattern-opacity-light: 0.04;      /* Jemnější pro sekce */
+  --pattern-opacity-medium: 0.06;    /* Střední pro hero */
+  
+  /* Luční SVG pattern - vylepšený, více variabilní */
+  --meadow-pattern: url("data:image/svg+xml,%3Csvg width='120' height='120' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='meadow' x='0' y='0' width='120' height='120' patternUnits='userSpaceOnUse'%3E%3Crect width='120' height='120' fill='%23FAF8F3'/%3E%3Cg opacity='0.04'%3E%3Cpath d='M15 95 Q25 85 35 95 T55 95' stroke='%236B8E5A' stroke-width='0.4' fill='none'/%3E%3Cpath d='M20 100 Q30 90 40 100 T60 100' stroke='%236B8E5A' stroke-width='0.35' fill='none'/%3E%3Cpath d='M10 90 Q20 80 30 90 T50 90' stroke='%238FA67A' stroke-width='0.35' fill='none'/%3E%3Cpath d='M70 92 Q80 82 90 92' stroke='%236B8E5A' stroke-width='0.3' fill='none'/%3E%3Cpath d='M75 97 Q85 87 95 97' stroke='%238FA67A' stroke-width='0.3' fill='none'/%3E%3Ccircle cx='25' cy='85' r='1.2' fill='%23D4A5A5'/%3E%3Ccircle cx='45' cy='83' r='0.9' fill='%23D4A5A5'/%3E%3Ccircle cx='65' cy='87' r='1' fill='%23D4A5A5'/%3E%3Ccircle cx='80' cy='85' r='0.7' fill='%23D4A5A5'/%3E%3Ccircle cx='100' cy='88' r='0.8' fill='%23D4A5A5'/%3E%3Cpath d='M5 75 Q10 70 15 75' stroke='%236B8E5A' stroke-width='0.25' fill='none'/%3E%3Ccircle cx='10' cy='70' r='0.6' fill='%23D4A5A5'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='120' height='120' fill='url(%23meadow)'/%3E%3C/svg%3E");
+  
+  /* Hero pattern - výraznější v rozích */
+  --meadow-pattern-hero: url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='meadowHero' x='0' y='0' width='200' height='200' patternUnits='userSpaceOnUse'%3E%3Crect width='200' height='200' fill='%23FAF8F3'/%3E%3Cg opacity='0.06'%3E%3Cpath d='M20 160 Q40 140 60 160 T100 160' stroke='%236B8E5A' stroke-width='0.5' fill='none'/%3E%3Cpath d='M25 170 Q45 150 65 170 T105 170' stroke='%236B8E5A' stroke-width='0.45' fill='none'/%3E%3Cpath d='M15 150 Q35 130 55 150 T95 150' stroke='%238FA67A' stroke-width='0.45' fill='none'/%3E%3Cpath d='M140 155 Q160 135 180 155' stroke='%236B8E5A' stroke-width='0.4' fill='none'/%3E%3Cpath d='M145 165 Q165 145 185 165' stroke='%238FA67A' stroke-width='0.4' fill='none'/%3E%3Ccircle cx='40' cy='140' r='1.5' fill='%23D4A5A5'/%3E%3Ccircle cx='80' cy='138' r='1.2' fill='%23D4A5A5'/%3E%3Ccircle cx='120' cy='142' r='1.3' fill='%23D4A5A5'/%3E%3Ccircle cx='160' cy='140' r='1' fill='%23D4A5A5'/%3E%3Ccircle cx='10' cy='145' r='0.8' fill='%23D4A5A5'/%3E%3Ccircle cx='190' cy='148' r='0.9' fill='%23D4A5A5'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='200' height='200' fill='url(%23meadowHero)'/%3E%3C/svg%3E");
 }
 
 @layer base {
@@ -14,22 +39,112 @@
   
   body {
     @apply font-sans text-wedding-dark antialiased;
-    background-color: #FAF8F3;
+    background-color: var(--bg);
     background-image: var(--meadow-pattern);
-    background-size: 200px 200px;
+    background-size: 240px 240px;
     background-position: 0 0;
+    position: relative;
+  }
+  
+  /* Jemná viněta pro hloubku */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(ellipse at top, rgba(107, 142, 90, 0.015) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom, rgba(107, 142, 90, 0.015) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
   }
 }
 
 @layer components {
+  /* Základní sekce */
   .section-container {
     @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .section > .section-container,
+  .section--alt > .section-container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Alternující pozadí pro sekce */
+  .section {
+    background-color: var(--bg);
+    background-image: var(--meadow-pattern);
+    background-size: 240px 240px;
+    background-position: 0 0;
+    position: relative;
+  }
+  
+  .section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(107, 142, 90, 0.01) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  
+  /* Alternující sekce - o odstín tmavší */
+  .section--alt {
+    background-color: var(--bg-alt);
+    background-image: var(--meadow-pattern);
+    background-size: 240px 240px;
+    background-position: 0 0;
+    position: relative;
+  }
+  
+  .section--alt::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(107, 142, 90, 0.015) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  
+  /* Oddělovač mezi sekcemi */
+  .section-divider {
+    @apply flex items-center justify-center py-8;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .section-divider::before,
+  .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border), transparent);
+    opacity: 0.4;
+  }
+  
+  .section-divider-center {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    opacity: 0.3;
+    margin: 0 12px;
   }
   
   .card {
     @apply bg-wedding-surface rounded-xl shadow-sm p-6 sm:p-8;
-    border: 1px solid rgba(107, 142, 90, 0.12);
-    box-shadow: 0 2px 8px 0 rgba(44, 58, 47, 0.06), 0 1px 2px 0 rgba(44, 58, 47, 0.04);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
   }
   
   .btn-primary {
@@ -49,23 +164,42 @@
     @apply outline-none ring-2 ring-wedding-primary ring-offset-2 ring-offset-wedding-background;
   }
   
-  /* Hero sekce s jemně výraznějším pozadím */
+  /* Hero sekce s výraznějším patternem v rozích */
   .hero-background {
-    background-color: #FAF8F3;
-    background-image: var(--meadow-pattern);
-    background-size: 180px 180px;
-    background-position: 0 0;
+    background-color: var(--bg);
     position: relative;
+    overflow: hidden;
   }
   
+  /* Pattern pouze v rozích hero sekce */
   .hero-background::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    left: -20%;
+    right: -20%;
+    bottom: -20%;
+    background-image: var(--meadow-pattern-hero);
+    background-size: 300px 300px;
+    background-position: 0 0;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  /* Gradient maska pro jemné vyblednutí patternu */
+  .hero-background::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(ellipse at center, rgba(107, 142, 90, 0.02) 0%, transparent 70%);
+    background: 
+      radial-gradient(ellipse at top left, rgba(250, 248, 243, 0.7) 0%, transparent 40%),
+      radial-gradient(ellipse at top right, rgba(250, 248, 243, 0.7) 0%, transparent 40%),
+      radial-gradient(ellipse at bottom left, rgba(250, 248, 243, 0.7) 0%, transparent 40%),
+      radial-gradient(ellipse at bottom right, rgba(250, 248, 243, 0.7) 0%, transparent 40%),
+      radial-gradient(ellipse at center, transparent 0%, rgba(250, 248, 243, 0.3) 60%);
     pointer-events: none;
   }
   

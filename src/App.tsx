@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Countdown from './components/Countdown';
 import Section from './components/Section';
+import SectionDivider from './components/SectionDivider';
 import Timeline from './components/Timeline';
 import WitnessContacts from './components/WitnessContacts';
 import RSVPForm from './components/RSVPForm';
@@ -18,7 +19,9 @@ function App() {
 
       <Countdown />
 
-      <Section id="about" title={siteData.about.title}>
+      <SectionDivider />
+
+      <Section id="about" title={siteData.about.title} variant="default">
         <div className="card max-w-2xl mx-auto text-center">
           <p className="text-lg text-wedding-dark leading-relaxed">
             {siteData.about.text}
@@ -26,11 +29,15 @@ function App() {
         </div>
       </Section>
 
-      <Section id="program" title="Program dne">
+      <SectionDivider />
+
+      <Section id="program" title="Program dne" variant="alt">
         <Timeline />
       </Section>
 
-      <Section id="location" title="Místo konání">
+      <SectionDivider />
+
+      <Section id="location" title="Místo konání" variant="default">
         <div className="space-y-6">
           <div className="card max-w-2xl mx-auto text-center">
             <MapPin className="mx-auto text-wedding-primary mb-4" size={32} />
@@ -89,7 +96,9 @@ function App() {
         </div>
       </Section>
 
-      <Section id="dresscode" title={siteData.dressCode.title}>
+      <SectionDivider />
+
+      <Section id="dresscode" title={siteData.dressCode.title} variant="alt">
         <div className="card max-w-2xl mx-auto text-center">
           <Shirt className="mx-auto text-wedding-primary mb-4" size={32} />
           <p className="text-lg text-wedding-dark leading-relaxed">
@@ -98,7 +107,9 @@ function App() {
         </div>
       </Section>
 
-      <Section id="gifts" title={siteData.gifts.title}>
+      <SectionDivider />
+
+      <Section id="gifts" title={siteData.gifts.title} variant="default">
         <div className="card max-w-2xl mx-auto text-center">
           <Gift className="mx-auto text-wedding-primary mb-4" size={32} />
           <p className="text-lg text-wedding-dark leading-relaxed mb-4">
@@ -114,7 +125,9 @@ function App() {
 
       <WitnessContacts />
 
-      <Section id="rsvp" title="Potvrzení účasti">
+      <SectionDivider />
+
+      <Section id="rsvp" title="Potvrzení účasti" variant="alt">
         <RSVPForm />
       </Section>
 

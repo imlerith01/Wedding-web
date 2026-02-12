@@ -21,8 +21,9 @@ const WitnessContacts = () => {
   ];
 
   return (
-    <section className="section-container">
-      <div className="max-w-4xl mx-auto">
+    <section className="section--alt">
+      <div className="section-container">
+        <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-serif text-wedding-dark text-center mb-4">
           Máš dotaz, ale nechceš nás otravovat? Zeptej se svědků
         </h2>
@@ -86,6 +87,7 @@ const WitnessContacts = () => {
               </div>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </section>
