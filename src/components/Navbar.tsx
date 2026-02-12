@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-wedding-card shadow-md' : 'bg-transparent'
+        scrolled ? 'bg-wedding-surface/95 backdrop-blur-sm shadow-sm' : 'bg-transparent'
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,7 +43,7 @@ const Navbar = () => {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm text-wedding-dark hover:text-wedding-accent transition-colors duration-200"
+                className="text-sm text-wedding-dark hover:text-wedding-primary transition-colors duration-200"
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
@@ -55,7 +55,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-wedding-dark hover:text-wedding-accent"
+              className="text-wedding-dark hover:text-wedding-primary"
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -64,13 +64,13 @@ const Navbar = () => {
 
         {/* Mobile menu */}
         {isOpen && (
-          <div className="md:hidden pb-4 bg-wedding-card">
+          <div className="md:hidden pb-4 bg-wedding-surface/95 backdrop-blur-sm">
             <div className="flex flex-col space-y-2">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-wedding-dark hover:text-wedding-accent py-2 transition-colors duration-200"
+                  className="text-wedding-dark hover:text-wedding-primary py-2 transition-colors duration-200"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}

@@ -21,7 +21,7 @@ const WitnessContacts = () => {
   ];
 
   return (
-    <section className="section-container bg-wedding-background">
+    <section className="section-container">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-serif text-wedding-dark text-center mb-4">
           Máš dotaz, ale nechceš nás otravovat? Zeptej se svědků
@@ -33,9 +33,9 @@ const WitnessContacts = () => {
 
         {/* Jemná dekorativní linka */}
         <div className="flex items-center justify-center mb-12">
-          <div className="w-16 h-px bg-wedding-accent/40"></div>
-          <div className="w-2 h-2 rounded-full bg-wedding-accent mx-3"></div>
-          <div className="w-16 h-px bg-wedding-accent/40"></div>
+          <div className="w-16 h-px bg-wedding-primary/30"></div>
+          <div className="w-2 h-2 rounded-full bg-wedding-primary/50 mx-3"></div>
+          <div className="w-16 h-px bg-wedding-primary/30"></div>
         </div>
 
         {/* Karty svědků */}
@@ -43,12 +43,12 @@ const WitnessContacts = () => {
           {witnesses.map((witness, index) => (
             <div
               key={index}
-              className="bg-wedding-card rounded-lg p-6 sm:p-8 border border-wedding-primary/15 shadow-sm hover:shadow-md hover:border-wedding-accent/30 transition-all duration-200"
+              className="bg-wedding-surface rounded-xl p-6 sm:p-8 border border-wedding-border shadow-sm hover:shadow-md hover:border-wedding-primary/40 transition-all duration-200"
             >
               <div className="text-center">
                 {/* Fotografie */}
                 <div className="mb-6 flex justify-center">
-                  <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden shadow-md ring-2 ring-wedding-accent/20">
+                    <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden shadow-md ring-2 ring-wedding-primary/20">
                     <img
                       src={witness.image}
                       alt={witness.name}
@@ -78,7 +78,7 @@ const WitnessContacts = () => {
                 {/* Telefon */}
                 <a
                   href={`tel:${witness.phone.replace(/\s/g, '')}`}
-                  className="inline-flex items-center gap-2 text-wedding-accent hover:text-wedding-secondary transition-colors duration-200 text-base sm:text-lg"
+                  className="inline-flex items-center gap-2 text-wedding-primary hover:text-wedding-primary-hover transition-colors duration-200 text-base sm:text-lg"
                 >
                   <Phone size={18} />
                   <span>{witness.phone}</span>

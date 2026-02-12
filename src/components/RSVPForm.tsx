@@ -1,10 +1,12 @@
-import { useState, FormEvent } from 'react';
-import { Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { useState, FormEvent, useRef, useEffect } from 'react';
+import { Send, AlertCircle } from 'lucide-react';
+import SuccessCard from './SuccessCard';
 
 const RSVPForm = () => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const nameInputRef = useRef<HTMLInputElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     contact: '',
@@ -63,33 +65,23 @@ const RSVPForm = () => {
     });
   };
 
+  const handleAddAnother = () => {
+    setSubmitted(false);
+    setError(null);
+    setFormData({
+      name: '',
+      contact: '',
+      notes: '',
+      attendance: 'yes',
+    });
+    // Focus na první input po resetu
+    setTimeout(() => {
+      nameInputRef.current?.focus();
+    }, 100);
+  };
+
   if (submitted) {
-    return (
-      <div className="card text-center">
-        <CheckCircle className="mx-auto text-wedding-accent mb-4" size={64} />
-        <h3 className="text-2xl font-serif text-wedding-dark mb-4">
-          Děkujeme!
-        </h3>
-        <p className="text-wedding-text-secondary mb-6">
-          Děkujeme za odpověď, moc se na vás těšíme ❤️
-        </p>
-        <button
-          onClick={() => {
-            setSubmitted(false);
-            setError(null);
-            setFormData({
-              name: '',
-              contact: '',
-              notes: '',
-              attendance: 'yes',
-            });
-          }}
-          className="btn-secondary"
-        >
-          Přihlásit dalšího hosta
-        </button>
-      </div>
-    );
+    return <SuccessCard onAddAnother={handleAddAnother} />;
   }
 
   return (
@@ -98,7 +90,7 @@ const RSVPForm = () => {
       className="card max-w-2xl mx-auto"
     >
       {error && (
-        <div className="mb-6 p-4 bg-red-50/80 border border-red-300/50 rounded-lg flex items-start gap-3">
+        <div className="mb-6 p-4 bg-red-50/80 border border-red-300/50 rounded-xl flex items-start gap-3">
           <AlertCircle className="text-red-600 flex-shrink-0 mt-0.5" size={20} />
           <p className="text-red-700 text-sm">{error}</p>
         </div>
@@ -110,13 +102,14 @@ const RSVPForm = () => {
             Jméno a příjmení *
           </label>
           <input
+            ref={nameInputRef}
             type="text"
             id="name"
             name="name"
             required
             value={formData.name}
             onChange={handleChange}
-            className="w-full px-4 py-2 bg-[#F7F5EE] border border-wedding-primary/20 rounded-lg focus:ring-2 focus:ring-wedding-accent focus:border-wedding-accent outline-none text-wedding-dark"
+            className="w-full px-4 py-3 bg-wedding-surface border border-wedding-border rounded-xl focus:ring-2 focus:ring-wedding-primary focus:border-wedding-primary outline-none text-wedding-dark transition-all duration-200"
             placeholder="Jan Novák"
           />
         </div>
@@ -132,7 +125,7 @@ const RSVPForm = () => {
             required
             value={formData.contact}
             onChange={handleChange}
-            className="w-full px-4 py-2 bg-[#F7F5EE] border border-wedding-primary/20 rounded-lg focus:ring-2 focus:ring-wedding-accent focus:border-wedding-accent outline-none text-wedding-dark"
+            className="w-full px-4 py-3 bg-wedding-surface border border-wedding-border rounded-xl focus:ring-2 focus:ring-wedding-primary focus:border-wedding-primary outline-none text-wedding-dark transition-all duration-200"
             placeholder="jan.novak@email.cz nebo +420 123 456 789"
           />
         </div>
@@ -149,7 +142,7 @@ const RSVPForm = () => {
                 value="yes"
                 checked={formData.attendance === 'yes'}
                 onChange={handleChange}
-                className="mr-2 text-wedding-accent focus:ring-wedding-accent"
+                className="mr-2 text-wedding-primary focus:ring-wedding-primary"
                 required
               />
               <span className="text-wedding-dark">Ano, přijdu</span>
@@ -161,7 +154,7 @@ const RSVPForm = () => {
                 value="no"
                 checked={formData.attendance === 'no'}
                 onChange={handleChange}
-                className="mr-2 text-wedding-accent focus:ring-wedding-accent"
+                className="mr-2 text-wedding-primary focus:ring-wedding-primary"
                 required
               />
               <span className="text-wedding-dark">Bohužel nemohu</span>
@@ -179,7 +172,7 @@ const RSVPForm = () => {
             rows={4}
             value={formData.notes}
             onChange={handleChange}
-            className="w-full px-4 py-2 bg-[#F7F5EE] border border-wedding-primary/20 rounded-lg focus:ring-2 focus:ring-wedding-accent focus:border-wedding-accent outline-none resize-none text-wedding-dark"
+            className="w-full px-4 py-3 bg-wedding-surface border border-wedding-border rounded-xl focus:ring-2 focus:ring-wedding-primary focus:border-wedding-primary outline-none resize-none text-wedding-dark transition-all duration-200"
             placeholder="Např. vegetariánská strava, alergie na ořechy..."
           />
         </div>

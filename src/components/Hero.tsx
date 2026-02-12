@@ -5,14 +5,14 @@ const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center relative overflow-hidden bg-wedding-background"
+      className="min-h-screen flex items-center relative overflow-hidden hero-background"
     >
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 mt-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Levý blok - Text */}
           <div className="text-center lg:text-left order-2 lg:order-1">
             <div className="mb-8 flex justify-center lg:justify-start">
-              <Heart className="text-wedding-secondary" size={48} fill="currentColor" />
+              <Heart className="text-wedding-primary" size={48} fill="currentColor" />
             </div>
             
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-wedding-dark mb-4">
@@ -21,7 +21,7 @@ const Hero = () => {
               {siteData.couple.bride}
             </h1>
             
-            <p className="text-xl sm:text-2xl md:text-3xl text-wedding-text-secondary mb-8 font-serif">
+            <p className="text-xl sm:text-2xl md:text-3xl text-wedding-muted mb-8 font-serif">
               {siteData.date.day}. {siteData.date.month} {siteData.date.year}
             </p>
             
@@ -46,7 +46,7 @@ const Hero = () => {
           {/* Pravý blok - Fotka */}
           <div className="order-1 lg:order-2">
             {siteData.hero.image ? (
-              <div className="rounded-lg overflow-hidden shadow-2xl">
+              <div className="rounded-2xl overflow-hidden shadow-lg border-2 border-wedding-border">
                 <img
                   src={siteData.hero.image}
                   alt={`${siteData.couple.groom} & ${siteData.couple.bride} - zásnuby`}
@@ -54,8 +54,8 @@ const Hero = () => {
                 />
               </div>
             ) : (
-              <div className="rounded-lg overflow-hidden shadow-2xl bg-wedding-card aspect-[4/5] lg:aspect-square flex items-center justify-center">
-                <Heart className="text-wedding-secondary opacity-30" size={120} />
+              <div className="rounded-2xl overflow-hidden shadow-lg bg-wedding-card border-2 border-wedding-border aspect-[4/5] lg:aspect-square flex items-center justify-center">
+                <Heart className="text-wedding-primary opacity-30" size={120} />
               </div>
             )}
           </div>

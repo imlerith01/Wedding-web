@@ -11,7 +11,7 @@ import { MapPin, Shirt, Gift } from 'lucide-react';
 
 function App() {
   return (
-    <div className="min-h-screen bg-wedding-background">
+    <div className="min-h-screen">
       <Navbar />
       
       <Hero />
@@ -33,7 +33,7 @@ function App() {
       <Section id="location" title="Místo konání">
         <div className="space-y-6">
           <div className="card max-w-2xl mx-auto text-center">
-            <MapPin className="mx-auto text-wedding-secondary mb-4" size={32} />
+            <MapPin className="mx-auto text-wedding-primary mb-4" size={32} />
             <h3 className="text-2xl font-serif text-wedding-dark mb-2">
               {siteData.location.name}
             </h3>
@@ -44,7 +44,7 @@ function App() {
                 href={siteData.location.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-wedding-accent hover:text-wedding-secondary underline transition-colors duration-200"
+                className="text-wedding-primary hover:text-wedding-primary-hover underline transition-colors duration-200"
               >
                 Více informací o místě →
               </a>
@@ -58,7 +58,7 @@ function App() {
                 {siteData.location.images.map((image, index) => (
                   <div
                     key={index}
-                    className="rounded-lg overflow-hidden shadow-md aspect-[4/3]"
+                    className="rounded-xl overflow-hidden shadow-md aspect-[4/3] border border-wedding-border"
                   >
                     <img
                       src={image}
@@ -73,7 +73,7 @@ function App() {
           )}
           
           <div className="max-w-4xl mx-auto">
-            <div className="rounded-lg overflow-hidden shadow-md">
+            <div className="rounded-xl overflow-hidden shadow-md border border-wedding-border">
               <iframe
                 src={siteData.location.mapUrl}
                 width="100%"
@@ -91,7 +91,7 @@ function App() {
 
       <Section id="dresscode" title={siteData.dressCode.title}>
         <div className="card max-w-2xl mx-auto text-center">
-          <Shirt className="mx-auto text-wedding-secondary mb-4" size={32} />
+          <Shirt className="mx-auto text-wedding-primary mb-4" size={32} />
           <p className="text-lg text-wedding-dark leading-relaxed">
             {siteData.dressCode.text}
           </p>
@@ -100,12 +100,12 @@ function App() {
 
       <Section id="gifts" title={siteData.gifts.title}>
         <div className="card max-w-2xl mx-auto text-center">
-          <Gift className="mx-auto text-wedding-secondary mb-4" size={32} />
+          <Gift className="mx-auto text-wedding-primary mb-4" size={32} />
           <p className="text-lg text-wedding-dark leading-relaxed mb-4">
             {siteData.gifts.text}
           </p>
           {siteData.gifts.account && (
-            <p className="text-base text-wedding-dark font-mono bg-wedding-accent/20 px-4 py-2 rounded inline-block border border-wedding-secondary/30">
+            <p className="text-base text-wedding-dark font-mono bg-wedding-accent/20 px-4 py-2 rounded-xl inline-block border border-wedding-border">
               {siteData.gifts.account}
             </p>
           )}

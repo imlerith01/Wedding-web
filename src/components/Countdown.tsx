@@ -66,12 +66,12 @@ const Countdown = () => {
 
   if (isExpired) {
     return (
-      <section className="section-container bg-wedding-background">
+      <section className="section-container">
         <div className="text-center">
           <h2 className="text-3xl sm:text-4xl font-serif text-wedding-dark mb-4">
             Už se nemůžeme dočkat.
           </h2>
-          <p className="text-2xl sm:text-3xl text-wedding-accent font-serif">
+          <p className="text-2xl sm:text-3xl text-wedding-primary font-serif">
             Svatba začíná! 🎉
           </p>
         </div>
@@ -81,7 +81,7 @@ const Countdown = () => {
 
   if (!timeLeft) {
     return (
-      <section className="section-container bg-wedding-background">
+      <section className="section-container">
         <div className="text-center">
           <h2 className="text-3xl sm:text-4xl font-serif text-wedding-dark mb-4">
             Už se nemůžeme dočkat.
@@ -95,7 +95,7 @@ const Countdown = () => {
   }
 
   const TimeUnit = ({ value, label }: { value: number; label: string }) => (
-    <div className="bg-wedding-card rounded-lg p-6 sm:p-8 border border-wedding-primary/15 shadow-sm">
+    <div className="bg-wedding-surface rounded-xl p-6 sm:p-8 border border-wedding-border shadow-sm">
       <div className="text-center">
         <div className="text-4xl sm:text-5xl md:text-6xl font-serif text-wedding-dark mb-2 font-bold">
           {value.toString().padStart(2, '0')}
@@ -108,7 +108,7 @@ const Countdown = () => {
   );
 
   return (
-    <section className="section-container bg-wedding-background">
+    <section className="section-container">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-serif text-wedding-dark text-center mb-8">
           Už se nemůžeme dočkat.
@@ -116,9 +116,9 @@ const Countdown = () => {
         
         {/* Jemná dekorativní linka */}
         <div className="flex items-center justify-center mb-8">
-          <div className="w-16 h-px bg-wedding-accent/40"></div>
-          <div className="w-2 h-2 rounded-full bg-wedding-accent mx-3"></div>
-          <div className="w-16 h-px bg-wedding-accent/40"></div>
+          <div className="w-16 h-px bg-wedding-primary/30"></div>
+          <div className="w-2 h-2 rounded-full bg-wedding-primary/50 mx-3"></div>
+          <div className="w-16 h-px bg-wedding-primary/30"></div>
         </div>
 
         {/* Timer grid */}

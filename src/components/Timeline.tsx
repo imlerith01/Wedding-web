@@ -7,10 +7,10 @@ const Timeline = () => {
       {siteData.program.map((item, index) => (
         <div
           key={index}
-          className="flex flex-col sm:flex-row gap-4 sm:gap-8 card hover:shadow-lg transition-shadow duration-200"
+          className="flex flex-col sm:flex-row gap-4 sm:gap-8 card hover:shadow-md transition-shadow duration-200"
         >
-          <div className="flex items-start sm:items-center gap-4 sm:w-32 flex-shrink-0">
-            <Clock className="text-wedding-secondary flex-shrink-0" size={24} />
+          <div           className="flex items-start sm:items-center gap-4 sm:w-32 flex-shrink-0">
+            <Clock className="text-wedding-primary flex-shrink-0" size={24} />
             <span className="text-xl font-semibold text-wedding-dark">
               {item.time}
             </span>
