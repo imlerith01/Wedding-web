@@ -9,7 +9,7 @@ const Hero = () => {
     >
       {/* Rohové dekorace - traviny (subtilní, pod obsahem) */}
       <div
-        className="absolute top-0 left-0 z-0 pointer-events-none opacity-[0.07] hidden sm:block sm:scale-100 md:scale-100"
+        className="absolute top-0 left-0 z-0 pointer-events-none opacity-[0.18] hidden sm:block sm:scale-100 md:scale-100"
         aria-hidden
       >
         <img
@@ -19,7 +19,7 @@ const Hero = () => {
         />
       </div>
       <div
-        className="absolute bottom-0 right-0 z-0 pointer-events-none opacity-[0.07] hidden sm:block sm:scale-[0.7] md:scale-100"
+        className="absolute bottom-0 right-0 z-0 pointer-events-none opacity-[0.18] hidden sm:block sm:scale-[0.7] md:scale-100"
         aria-hidden
       >
         <img
@@ -39,7 +39,7 @@ const Hero = () => {
             
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-wedding-dark mb-4">
               {siteData.couple.groom}
-              <span className="mx-4 text-wedding-accent">&</span>
+              <span className="mx-4 text-wedding-primary">&</span>
               {siteData.couple.bride}
             </h1>
             

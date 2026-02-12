@@ -25,7 +25,7 @@ const Section = ({ id, title, children, className = '', variant = 'default', sho
                 <img
                   src="/botanical/floral-divider.svg"
                   alt=""
-                  className="max-w-[200px] w-full h-auto opacity-[0.12]"
+                  className="max-w-[200px] w-full h-auto opacity-[0.28]"
                   aria-hidden
                 />
               </div>
