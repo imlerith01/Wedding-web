@@ -1,4 +1,4 @@
-import { useState, FormEvent, useRef, useEffect } from 'react';
+import { useState, FormEvent, useRef } from 'react';
 import { Send, AlertCircle } from 'lucide-react';
 import SuccessCard from './SuccessCard';
 
